@@ -28,6 +28,7 @@ VITE_API_BASE_URL=https://your-backend-url.onrender.com/api
 ```
 
 For local development:
+
 ```bash
 VITE_API_BASE_URL=http://localhost:8000/api
 ```
@@ -35,7 +36,8 @@ VITE_API_BASE_URL=http://localhost:8000/api
 Update the API call in your frontend (example in `client/src/lib/api.ts`):
 
 ```typescript
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000/api';
+const API_BASE_URL =
+  import.meta.env.VITE_API_BASE_URL || "http://localhost:8000/api";
 ```
 
 ## Step 3: Prepare Backend for Production
@@ -46,9 +48,9 @@ const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8000
 
 ```javascript
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:5173',
+  origin: process.env.FRONTEND_URL || "http://localhost:5173",
   credentials: true,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 ```
@@ -69,6 +71,7 @@ app.use(cors(corsOptions));
    - **Plan:** Free (or paid)
 
 5. Add Environment Variables:
+
    ```
    NODE_ENV=production
    PORT=10000
@@ -127,44 +130,48 @@ https://bravyn-frontend.onrender.com
 
 ### Backend Required Variables
 
-| Variable | Purpose | Example |
-|----------|---------|---------|
-| `MONGODB_URI` | Database connection | `mongodb+srv://...` |
-| `JWT_SECRET` | Token signing key | Random string (min 32 chars) |
-| `FRONTEND_URL` | CORS origin | `https://bravyn-frontend.onrender.com` |
-| `CLOUDINARY_NAME` | Image storage | From Cloudinary dashboard |
-| `CLOUDINARY_API_KEY` | Image storage | From Cloudinary |
-| `CLOUDINARY_API_SECRET` | Image storage | From Cloudinary |
-| `STRIPE_SECRET_KEY` | Payment processing | From Stripe dashboard |
-| `STRIPE_PUBLIC_KEY` | Payment processing | From Stripe |
-| `GMAIL_USER` | Email sender | your-email@gmail.com |
-| `GMAIL_PASS` | Email app password | App-specific password |
+| Variable                | Purpose             | Example                                |
+| ----------------------- | ------------------- | -------------------------------------- |
+| `MONGODB_URI`           | Database connection | `mongodb+srv://...`                    |
+| `JWT_SECRET`            | Token signing key   | Random string (min 32 chars)           |
+| `FRONTEND_URL`          | CORS origin         | `https://bravyn-frontend.onrender.com` |
+| `CLOUDINARY_NAME`       | Image storage       | From Cloudinary dashboard              |
+| `CLOUDINARY_API_KEY`    | Image storage       | From Cloudinary                        |
+| `CLOUDINARY_API_SECRET` | Image storage       | From Cloudinary                        |
+| `STRIPE_SECRET_KEY`     | Payment processing  | From Stripe dashboard                  |
+| `STRIPE_PUBLIC_KEY`     | Payment processing  | From Stripe                            |
+| `GMAIL_USER`            | Email sender        | your-email@gmail.com                   |
+| `GMAIL_PASS`            | Email app password  | App-specific password                  |
 
 ### Frontend Required Variables
 
-| Variable | Purpose | Example |
-|----------|---------|---------|
+| Variable            | Purpose         | Example                                   |
+| ------------------- | --------------- | ----------------------------------------- |
 | `VITE_API_BASE_URL` | Backend API URL | `https://bravyn-backend.onrender.com/api` |
 
 ## Troubleshooting
 
 ### Backend won't start
+
 - Check logs in Render dashboard
 - Verify MONGODB_URI is correct
 - Ensure PORT is set to 10000
 
 ### Frontend can't reach backend
+
 - Check VITE_API_BASE_URL in Render environment
 - Verify CORS is configured in backend
 - Check browser console for errors
 - Redeploy frontend after environment changes
 
 ### MongoDB connection errors
+
 - Verify IP whitelist includes 0.0.0.0/0
 - Check connection string format
 - Test connection locally first
 
 ### Database issues
+
 - Use MongoDB Atlas for easier management
 - Enable backups in MongoDB settings
 - Monitor resource usage
