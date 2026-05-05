@@ -1,4 +1,3 @@
-// src/pages/ProfilePage.tsx
 import { useUserStore } from "../../stores/userStore";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -51,24 +50,19 @@ const ProfilePage = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4">
       <div className="container mx-auto max-w-2xl">
-        {/* Header */}
         <div className="mb-12">
           <h1 className="text-4xl font-bold text-gray-900">My Profile</h1>
           <p className="text-gray-600 mt-2">Manage your account information</p>
         </div>
 
-        {/* Profile Card */}
         <div className="bg-white rounded-2xl shadow-sm p-8 md:p-12">
-          {/* Avatar */}
           <div className="flex justify-center mb-8">
             <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex items-center justify-center text-white text-4xl font-bold">
               {user.name.charAt(0).toUpperCase()}
             </div>
           </div>
 
-          {/* User Info */}
           <div className="space-y-8 mb-12">
-            {/* Name */}
             <div className="pb-6 border-b border-gray-200">
               <label className="flex items-center gap-3 text-sm font-semibold text-gray-600 mb-2">
                 <FaUser className="text-blue-600" />
@@ -79,7 +73,6 @@ const ProfilePage = () => {
               </p>
             </div>
 
-            {/* Email */}
             <div className="pb-6 border-b border-gray-200">
               <label className="flex items-center gap-3 text-sm font-semibold text-gray-600 mb-2">
                 <FaEnvelope className="text-blue-600" />
@@ -91,7 +84,6 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          {/* Actions */}
           <div className="flex flex-col gap-4">
             <Link
               to="/orders"

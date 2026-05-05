@@ -55,7 +55,6 @@ const ProductGrid: FC = () => {
 
   return (
     <section className="container mx-auto px-4 md:px-8 py-12">
-      {/* Section Header */}
       <div className="text-center mb-12">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
           Our Collection
@@ -66,7 +65,6 @@ const ProductGrid: FC = () => {
         </p>
       </div>
 
-      {/* Products Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-max">
         {(products && products.length) > 0 ? (
           products.map((product) => (

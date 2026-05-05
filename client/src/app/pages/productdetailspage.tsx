@@ -113,7 +113,6 @@ const ProductDetailsPage: FC = () => {
   const handleAddToCart = () => {
     if (user) {
       addToCart(product);
-      // Optional: Show success feedback
       alert(`${product.name} added to cart!`);
     }
   };
@@ -121,7 +120,6 @@ const ProductDetailsPage: FC = () => {
   return (
     <div className="container mx-auto p-4 md:p-8 min-h-screen bg-gray-50">
       <div className="max-w-6xl mx-auto">
-        {/* Breadcrumb */}
         <Link
           to="/"
           className="inline-flex items-center text-blue-600 hover:text-blue-800 mb-8 font-medium"
@@ -143,7 +141,6 @@ const ProductDetailsPage: FC = () => {
         </Link>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 bg-white rounded-xl shadow-sm p-6 md:p-12">
-          {/* Product Image Section */}
           <div className="flex flex-col justify-center">
             <div className="rounded-xl overflow-hidden shadow-lg bg-gray-100 h-96 md:h-full flex items-center justify-center">
               <img
@@ -163,9 +160,7 @@ const ProductDetailsPage: FC = () => {
             </div>
           </div>
 
-          {/* Product Info Section */}
           <div className="flex flex-col justify-between space-y-8">
-            {/* Product Header */}
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 text-xs font-semibold rounded-full">
@@ -182,7 +177,6 @@ const ProductDetailsPage: FC = () => {
               <p className="text-gray-600 text-sm">SKU: PROD-{product.id}</p>
             </div>
 
-            {/* Price Section */}
             <div className="border-y border-gray-200 py-6">
               <div className="flex items-baseline gap-3 mb-3">
                 <span className="text-5xl font-bold text-blue-600">
@@ -200,7 +194,6 @@ const ProductDetailsPage: FC = () => {
               </p>
             </div>
 
-            {/* Description */}
             <div>
               <h3 className="text-lg font-semibold text-gray-900 mb-3">
                 About this product
@@ -227,7 +220,6 @@ const ProductDetailsPage: FC = () => {
               </div>
             </div>
 
-            {/* Stock Status */}
             <div className="flex items-center gap-2 text-sm p-3 bg-green-50 rounded-lg">
               <span className="inline-block w-3 h-3 bg-green-500 rounded-full animate-pulse"></span>
               <span className="text-green-800 font-medium">
@@ -235,7 +227,6 @@ const ProductDetailsPage: FC = () => {
               </span>
             </div>
 
-            {/* Action Buttons */}
             <div className="space-y-3 pt-4">
               {user ? (
                 <button
@@ -283,7 +274,6 @@ const ProductDetailsPage: FC = () => {
               </button>
             </div>
 
-            {/* Features */}
             <div className="grid grid-cols-2 gap-4 p-4 bg-gray-50 rounded-lg text-center">
               <div>
                 <p className="text-2xl font-bold text-gray-900">30</p>

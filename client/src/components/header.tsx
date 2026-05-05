@@ -1,4 +1,3 @@
-// src/components/Header.tsx
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useEcomStore } from "../stores/productStore";
@@ -58,7 +57,6 @@ const Header = () => {
     e.preventDefault();
     if (searchQuery.trim()) {
       console.log("Searching for:", searchQuery);
-      // You can add search functionality here
       setSearchQuery("");
       setSearchOpen(false);
     }
@@ -76,9 +74,7 @@ const Header = () => {
         className={`w-full z-50 transition-all duration-300 bg-white ${scrolled ? "shadow-lg" : "shadow-md"}`}
       >
         <div className="container mx-auto flex justify-between items-center py-4 px-4 md:px-8">
-          {/* LEFT SECTION - Mobile Menu & Search */}
           <div className="flex items-center space-x-3">
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setSidebarOpen(!sidebarOpen)}
               className="md:hidden text-2xl text-gray-800 hover:text-blue-600 transition-colors duration-200 p-2"
@@ -87,7 +83,6 @@ const Header = () => {
               <FaBars />
             </button>
 
-            {/* Search Button - Mobile & Desktop */}
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="text-xl md:text-2xl cursor-pointer text-gray-800 hover:text-blue-600 transition-colors duration-200 p-2 hover:bg-gray-100 rounded-full"
@@ -96,7 +91,6 @@ const Header = () => {
               <FaSearch />
             </button>
 
-            {/* Profile Icon - Left Side (when logged in) */}
             {user && (
               <Link
                 to="/profile"
@@ -108,7 +102,6 @@ const Header = () => {
             )}
           </div>
 
-          {/* CENTER SECTION - Logo */}
           <Link
             to="/"
             className="text-xl md:text-2xl font-bold uppercase tracking-widest hover:text-blue-600 transition-colors duration-200"
@@ -116,9 +109,7 @@ const Header = () => {
             <span className="text-blue-600">BRAVYN</span>
           </Link>
 
-          {/* RIGHT SECTION - Auth & Cart */}
           <div className="flex items-center space-x-3 md:space-x-4">
-            {/* Shopping Cart - Logged in users only */}
             {user && (
               <Link
                 to="/cart"
@@ -134,7 +125,6 @@ const Header = () => {
               </Link>
             )}
 
-            {/* Login/Signup Buttons - Not logged in */}
             {!user && (
               <>
                 <Link
@@ -152,7 +142,6 @@ const Header = () => {
               </>
             )}
 
-            {/* Logout Button - Logged in users only */}
             {user && (
               <button
                 onClick={() => {
@@ -170,7 +159,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Search Bar */}
         {searchOpen && (
           <div className="absolute top-full left-0 w-full bg-white border-t border-gray-200 shadow-lg animate-in slide-in-from-top py-4 px-4 md:px-8">
             <form onSubmit={handleSearch} className="container mx-auto">
@@ -195,7 +183,6 @@ const Header = () => {
         )}
       </header>
 
-      {/* Sidebar Overlay */}
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black bg-opacity-50 z-40 md:hidden"
@@ -204,12 +191,10 @@ const Header = () => {
         />
       )}
 
-      {/* Mobile Sidebar */}
       <div
         className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 md:hidden overflow-y-auto ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}`}
         style={{ marginTop: "0" }}
       >
-        {/* Sidebar Header */}
         <div className="flex justify-between items-center p-4 border-b border-gray-200 sticky top-0 bg-white z-10">
           <h2 className="text-xl font-bold text-blue-600">Menu</h2>
           <button
@@ -221,7 +206,6 @@ const Header = () => {
           </button>
         </div>
 
-        {/* Sidebar Navigation */}
         <nav className="flex flex-col space-y-1 px-4 py-6 pb-40">
           {navLinks.map((link) => {
             const IconComponent = link.icon;
@@ -238,10 +222,8 @@ const Header = () => {
             );
           })}
 
-          {/* Divider */}
           <div className="my-4 border-t border-gray-200" />
 
-          {/* Mobile Auth Links - Not logged in */}
           {!user && (
             <div className="space-y-2 py-4">
               <Link
@@ -263,7 +245,6 @@ const Header = () => {
             </div>
           )}
 
-          {/* Mobile Logout - Logged in */}
           {user && (
             <div className="py-4 space-y-2">
               <Link
@@ -305,7 +286,6 @@ const Header = () => {
           )}
         </nav>
 
-        {/* Sidebar Footer - User Info (Logged in) */}
         {user && (
           <div className="absolute bottom-0 left-0 right-0 border-t border-gray-200 bg-gradient-to-t from-gray-50 to-white p-4">
             <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-lg">

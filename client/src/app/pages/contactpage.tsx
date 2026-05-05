@@ -25,7 +25,6 @@ const ContactPage = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
     setTimeout(() => {
       setSubmitted(true);
       setFormData({ name: "", email: "", subject: "", message: "" });
@@ -36,7 +35,6 @@ const ContactPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero */}
       <section className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white py-16 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-4">Get in Touch</h1>
@@ -46,11 +44,9 @@ const ContactPage = () => {
         </div>
       </section>
 
-      {/* Content */}
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {/* Contact Info */}
             <div className="bg-white rounded-xl shadow-sm p-8 text-center">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaMapMarkerAlt className="text-2xl text-blue-600" />
@@ -76,7 +72,6 @@ const ContactPage = () => {
             </div>
           </div>
 
-          {/* Form */}
           <div className="bg-white rounded-xl shadow-sm p-8 md:p-12">
             {submitted && (
               <div className="mb-6 bg-green-50 border border-green-200 text-green-700 px-6 py-4 rounded-lg flex items-center gap-3">
@@ -92,7 +87,6 @@ const ContactPage = () => {
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {/* Name */}
                 <div>
                   <label
                     htmlFor="name"
@@ -112,7 +106,6 @@ const ContactPage = () => {
                   />
                 </div>
 
-                {/* Email */}
                 <div>
                   <label
                     htmlFor="email"
@@ -133,7 +126,6 @@ const ContactPage = () => {
                 </div>
               </div>
 
-              {/* Subject */}
               <div>
                 <label
                   htmlFor="subject"
@@ -153,7 +145,6 @@ const ContactPage = () => {
                 />
               </div>
 
-              {/* Message */}
               <div>
                 <label
                   htmlFor="message"
@@ -173,7 +164,6 @@ const ContactPage = () => {
                 ></textarea>
               </div>
 
-              {/* Submit */}
               <button
                 type="submit"
                 disabled={loading}

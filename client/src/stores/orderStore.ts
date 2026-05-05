@@ -73,7 +73,6 @@ interface OrderState {
   loading: boolean;
   error: string | null;
 
-  // Actions
   placeOrder: (
     orderData: PlaceOrderInput,
     userId: string,

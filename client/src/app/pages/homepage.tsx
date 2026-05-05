@@ -1,4 +1,3 @@
-// src/pages/HomePage.tsx
 import ProductGrid from "../../components/productgrid";
 import story from "../../story.png";
 import { FaArrowRight, FaShoppingBag, FaWhatsapp } from "react-icons/fa";
@@ -6,15 +5,12 @@ import { FaArrowRight, FaShoppingBag, FaWhatsapp } from "react-icons/fa";
 const HomePage = () => {
   return (
     <>
-      {/* Hero Section */}
       <section
         className="relative h-screen bg-cover bg-center bg-fixed flex items-center justify-center"
         style={{ backgroundImage: "url(/home__back.png)" }}
       >
-        {/* Overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col items-center justify-center h-full text-white text-center px-4">
           <div className="space-y-6 max-w-3xl">
             <h1 className="text-5xl md:text-7xl font-bold leading-tight animate-fadeInUp">
@@ -36,16 +32,13 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Products Grid */}
       <div id="products-grid" className="py-16 md:py-24">
         <ProductGrid />
       </div>
 
-      {/* Story Section */}
       <section className="bg-gray-50 py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center lg:gap-16">
-            {/* Image */}
             <div className="order-1 md:order-none">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 rounded-2xl transform translate-x-4 translate-y-4 opacity-10"></div>
@@ -57,7 +50,6 @@ const HomePage = () => {
               </div>
             </div>
 
-            {/* Content */}
             <div className="order-2 md:order-none">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 Our Story
@@ -80,14 +72,12 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* Features Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 md:px-8">
           <h2 className="text-4xl font-bold text-center mb-12 text-gray-900">
             Why Choose Bravyn?
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* Feature 1 */}
             <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaShoppingBag className="text-2xl text-blue-600" />
@@ -100,7 +90,6 @@ const HomePage = () => {
               </p>
             </div>
 
-            {/* Feature 2 */}
             <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
@@ -119,7 +108,6 @@ const HomePage = () => {
               </p>
             </div>
 
-            {/* Feature 3 */}
             <div className="text-center p-8 bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
               <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
@@ -145,7 +133,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* WhatsApp Button */}
       <a
         href="https://wa.me/919876543210"
         target="_blank"

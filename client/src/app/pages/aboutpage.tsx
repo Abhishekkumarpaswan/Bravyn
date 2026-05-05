@@ -3,7 +3,6 @@ import { FaLeaf, FaHandshake, FaStar, FaClock } from "react-icons/fa";
 const AboutPage = () => {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-600 to-indigo-600 text-white py-20 px-4">
         <div className="container mx-auto max-w-4xl text-center">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About BRAVYN</h1>
@@ -13,10 +12,8 @@ const AboutPage = () => {
         </div>
       </section>
 
-      {/* Main Content */}
       <section className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-4xl space-y-12">
-          {/* Welcome Section */}
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-6">
               Welcome to Our Story
@@ -37,13 +34,11 @@ const AboutPage = () => {
             </p>
           </div>
 
-          {/* Values Section */}
           <div>
             <h2 className="text-4xl font-bold text-gray-900 mb-8">
               Our Values
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Quality */}
               <div className="bg-blue-50 p-8 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white">
@@ -59,7 +54,6 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Sustainability */}
               <div className="bg-green-50 p-8 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white">
@@ -75,7 +69,6 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Community */}
               <div className="bg-purple-50 p-8 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white">
@@ -91,7 +84,6 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Fast Delivery */}
               <div className="bg-orange-50 p-8 rounded-xl">
                 <div className="flex items-center gap-4 mb-4">
                   <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center text-white">
@@ -109,7 +101,6 @@ const AboutPage = () => {
             </div>
           </div>
 
-          {/* CTA */}
           <div className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-2xl p-12 text-center">
             <h2 className="text-3xl font-bold mb-4">
               Ready to Join the Movement?

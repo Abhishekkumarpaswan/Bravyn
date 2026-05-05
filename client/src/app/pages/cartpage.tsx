@@ -23,7 +23,6 @@ const CartPage: FC = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 md:px-8">
       <div className="container mx-auto max-w-6xl">
-        {/* Header */}
         <div className="flex items-center gap-4 mb-12">
           <button
             onClick={() => navigate("/")}
@@ -68,7 +67,6 @@ const CartPage: FC = () => {
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Cart Items */}
             <div className="lg:col-span-2">
               <div className="bg-white rounded-xl shadow-sm overflow-hidden">
                 {cart.map((item, index) => (
@@ -76,7 +74,6 @@ const CartPage: FC = () => {
                     key={item.id}
                     className={`flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 ${index !== cart.length - 1 ? "border-b border-gray-200" : ""}`}
                   >
-                    {/* Product Image & Info */}
                     <Link
                       to={`/product/${item.id}`}
                       className="flex-1 flex gap-4"
@@ -98,7 +95,6 @@ const CartPage: FC = () => {
                       </div>
                     </Link>
 
-                    {/* Quantity Controls */}
                     <div className="flex items-center gap-3 bg-gray-100 rounded-lg p-2">
                       <button
                         onClick={() => decreaseQuantity(item.id)}
@@ -119,7 +115,6 @@ const CartPage: FC = () => {
                       </button>
                     </div>
 
-                    {/* Price */}
                     <div className="text-right min-w-[100px]">
                       <p className="font-bold text-gray-900 text-lg">
                         ₹{item.price * item.quantity}
@@ -127,7 +122,6 @@ const CartPage: FC = () => {
                       <p className="text-sm text-gray-500">Subtotal</p>
                     </div>
 
-                    {/* Remove Button */}
                     <button
                       onClick={() => removeFromCart(item.id)}
                       className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
@@ -140,7 +134,6 @@ const CartPage: FC = () => {
               </div>
             </div>
 
-            {/* Order Summary */}
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl shadow-sm p-6 sticky top-20">
                 <h2 className="text-xl font-bold text-gray-900 mb-6">
