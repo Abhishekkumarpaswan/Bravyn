@@ -1,7 +1,15 @@
 import axios from "axios";
 
-const API_BASE_URL =
-  import.meta.env.VITE_API_BASE_URL || "http://localhost:5000/api";
+const normalizeApiBaseUrl = (value?: string) => {
+  const rawValue = value?.trim() || "http://localhost:5000/api";
+  const withoutTrailingSlash = rawValue.replace(/\/+$/, "");
+
+  return withoutTrailingSlash.endsWith("/api")
+    ? withoutTrailingSlash
+    : `${withoutTrailingSlash}/api`;
+};
+
+const API_BASE_URL = normalizeApiBaseUrl(import.meta.env.VITE_API_BASE_URL);
 const ACCESS_TOKEN_KEY = "accessToken";
 
 const getAccessToken = () => localStorage.getItem(ACCESS_TOKEN_KEY);
