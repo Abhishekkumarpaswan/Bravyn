@@ -24,8 +24,9 @@ services:
 
   - type: static
     name: bravyn-frontend
-    staticPublishPath: client/dist
-    buildCommand: cd client && npm install && npm run build
+    rootDir: client
+    buildCommand: npm install && npm run build
+    staticPublishPath: dist
     routes:
       - path: /*
         destination: /index.html
